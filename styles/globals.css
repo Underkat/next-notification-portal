@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "BIOS";
+  src: url("../public/Fonts/Ac437_EverexME_7x8.ttf");
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'BIOS', sans-serif;
+  font-weight: bold;
+  
+}
+body{
+  background-color: darkblue;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  cursor: url('../public/cursor.png'), auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    
+  }
+}
