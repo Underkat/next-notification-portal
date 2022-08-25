@@ -4,10 +4,11 @@ export interface Player {
 }
 
 export interface PlayerInfo {
+  id: string;
   name: string;
   phone: PlayerPhone;
 }
 
-export interface PlayerPhone{
-    phone : string
+export interface PlayerPhone {
+  phone: string;
 }

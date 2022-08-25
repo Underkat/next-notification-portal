@@ -4,10 +4,10 @@ import { useState } from "react";
 
 export interface ModalProps {
   hideModal: any;
-  userName: string;
+  name: string;
   userPhone: string;
 }
-const Modal = ({ hideModal, userName, userPhone }: ModalProps) => {
+const Modal = ({ hideModal, name, userPhone }: ModalProps) => {
   const [number, setNumber] = useState("");
   const [body, setBody] = useState("");
 
@@ -41,7 +41,7 @@ const Modal = ({ hideModal, userName, userPhone }: ModalProps) => {
             <h2>Do you want to send a notification to</h2>
           </div>
           <div className={styles.modalBody}>
-            <p> Name at ###-##-####</p>
+            <p>{name}</p>
           </div>
         </div>
         <div className={styles.modalFooter}>
