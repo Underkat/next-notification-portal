@@ -7,11 +7,7 @@ export interface ModalProps {
   userName: string;
   userPhone: string;
 }
-const Modal: FunctionComponent<ModalProps> = ({
-  hideModal,
-  userName,
-  userPhone,
-}) => {
+const Modal = ({ hideModal, userName, userPhone }: ModalProps) => {
   const [number, setNumber] = useState("");
   const [body, setBody] = useState("");
 
@@ -23,6 +19,7 @@ const Modal: FunctionComponent<ModalProps> = ({
       headers: {
         "Content-Type": "application/json",
       },
+      //body: JSON.stringify({ to: "+17059775844", body: "Hell ofrom maxwelka" }),
     });
 
     const data = await res.json();
