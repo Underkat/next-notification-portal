@@ -5,15 +5,10 @@ import Modal from "../components/Modal";
 import styles from "../styles/Home.module.css";
 import { Player } from "../types";
 import requests from "../utils/request";
-import getUser from "./api/getUser";
-import useSWR, { Key, Fetcher } from "swr";
 
 interface Props {
   players: [Player];
 }
-
-//const fetcher = (...args: any) =>
-  //fetch(...([args] as const)).then((res) => res.json());
 
 const Home = ({ players }: Props) => {
   const [openModal, setOpenModal] = useState(false);
@@ -22,20 +17,12 @@ const Home = ({ players }: Props) => {
 
   const OpenModal = async (id: string, name: string) => {
     setOpenModal(true);
-    //console.log(requests.fetchPlayer + `${id}`);
-    //const res = await fetch(requests.fetchPlayer + `${id}`);
-    //const data = await res.json();
-    const phone = await fetch("api/getUser");
-    const data = await phone.json();
-    // setName(name);
-    //setPhone(phone);
-     console.log(data);
 
-    //const { data, error } = useSWR(requests.fetchPlayer + `${id}`, fetcher);
+    const req = await fetch(`api/getUser?id=${id}`);
+    const resp = await req.json();
 
-    //if (error) return console.log("error loading");
-
-    //setName(data.name);
+    setName(resp.name);
+    setPhone(resp.data.phone)
   };
 
   return (

@@ -41,7 +41,7 @@ const Modal = ({ hideModal, name, userPhone }: ModalProps) => {
             <h2>Do you want to send a notification to</h2>
           </div>
           <div className={styles.modalBody}>
-            <p>{name}</p>
+            <p>{name} at {userPhone}</p>
           </div>
         </div>
         <div className={styles.modalFooter}>
