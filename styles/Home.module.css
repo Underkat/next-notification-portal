@@ -28,14 +28,15 @@
   padding: 20px;
   margin: 7vh 20% 10vh 20%;
   box-shadow:20px 20px #111;
-  
+  max-width: 900px;
+  min-width: 300px;
 }
 
 .nameEntry {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  padding: 0 50px;
 }
 .button{
   font-family: 'BIOS', sans-serif;
@@ -182,6 +183,9 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+  .nameContainer{
+    font-size: .5rem;
   }
 }
 

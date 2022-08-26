@@ -14,12 +14,12 @@ const Modal = ({ hideModal, name, userPhone }: ModalProps) => {
   const sentMessage = async (e: BaseSyntheticEvent) => {
     e.preventDefault();
 
-    const res = await fetch("/api/sendMessage", {
+    const res = await fetch(`/api/sendMessage?`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      //body: JSON.stringify({ to: "+17059775844", body: "Hell ofrom maxwelka" }),
+      body: JSON.stringify({ phone: userPhone, message: "Hell ofrom maxwelka" }),
     });
 
     const data = await res.json();
