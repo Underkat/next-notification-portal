@@ -7,17 +7,13 @@ const sendMessage = (req: NextApiRequest, res: NextApiResponse) => {
 
   const client = twilio(accountSid, authToken);
   const { phone, message } = req.body;
+  console.log(phone, message);
 
   client.messages
     .create({
-      //body: message,
-      //to: phone,
-      
+      body: message,
+      to: phone,
     })
-    // .then((message: any) => console.log(message.sid))
-    // .catch((error: any) => {
-    //   console.log(error);
-    // });
     .then((message) =>
       res.json({
         success: true,
